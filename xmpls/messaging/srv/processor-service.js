@@ -79,7 +79,6 @@ class ProcessorService extends cds.ApplicationService {
     const query = SELECT.from(BusinessPartner, bp => {
       bp('ID', 'name', 'firstName', 'lastName');
       bp.addresses(address => {
-        address('email');
         address.email(emails => {
           emails('email');
         });
