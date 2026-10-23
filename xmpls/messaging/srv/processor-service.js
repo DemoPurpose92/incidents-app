@@ -47,7 +47,7 @@ class ProcessorService extends cds.ApplicationService {
 
       // Expands are required as the runtime does not support path expressions for remote services
       const customer = await this.S4bupa.run(SELECT.one(BusinessPartner, bp => {
-        bp('*');
+        bp('ID', 'firstName', 'lastName');
           bp.addresses(address => {
               address.email(emails => {
                 emails('email')
@@ -77,7 +77,7 @@ class ProcessorService extends cds.ApplicationService {
 
     const { BusinessPartner } = this.remoteService.entities;
     const query = SELECT.from(BusinessPartner, bp => {
-      bp('*');
+      bp('ID', 'name', 'firstName', 'lastName');
       bp.addresses(address => {
         address('email');
         address.email(emails => {
