@@ -33,6 +33,11 @@
                         "path": "/sap/opu/odata/sap/API_BUSINESS_PARTNER"
                     }
                 }
+            },
+            "notifications": {
+                "[production]": {
+                    "kind": "notify-to-console"
+                }
             }
         }
     }
